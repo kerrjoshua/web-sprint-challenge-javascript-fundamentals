@@ -2,6 +2,7 @@
 /* 🚀🚀🚀🤓 Task 1: 🤓🚀🚀🚀 
 Study the code below and explain in your own words why nested function can access the variable internal. */
 
+
 const external = "I'm outside the function";
 
 function myFunction() {
@@ -18,6 +19,7 @@ function myFunction() {
 //🚀🚀🚀 ⬇️ 📝 Explanation ⬇️ 📝 🚀🚀🚀: 
 
 
+/* The reason the nested function can access the variable 'internal', is that functions will first look within their own scope to locate values for variables. Failing this, they will look in the next higher level of scope, all the way to global, or window, scope. */
 
 
 
@@ -30,10 +32,21 @@ function myFunction() {
 💡 NOTE: you may use a for loop for this function if you wish 
 */
 
-function summation(/*Your Code Here*/) {
-  /*Your Code Here*/
+function summation(n) {
+  const countArr = [];
+  const finalValue = n;
+  for (let i = 0; i < finalValue; i++){
+    countArr.push(i + 1);
+  }
+  const sumValue = countArr.reduce(
+    (previousValue, currentValue) => previousValue + currentValue,
+    0
+  );
+  return sumValue;
 
   }
+
+  console.log(summation(4));
  
 
 // 🦁🦁🦁 Topic 2: ADVANCED Array Methods 🦁🦁🦁

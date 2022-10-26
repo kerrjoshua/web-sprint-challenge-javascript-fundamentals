@@ -26,13 +26,27 @@ Edit this document to include your answers after each question. Make sure to lea
 
 1. Explain the differences between `.map`, `.reduce` and `.filter` and describe a use case for each. 
 
+My examples will all refer to how a large organization, such as a professional guild or union, might manage their membership data. 
+.map creates a new array based on an existing one by performing some manipulation on each item of the source array. A use case would be creating a call list by selecting only the name and phone number of each record of an organization's membership database. .reduce returns a value based on some agglomeration of information contained in the items of an array. It could be used to deliver the average or total dues owed by members of the organization. .filter creates a new array from the source by including only the items that meet a given condition. It could be used to discover only the organization members whose dates of birth are in the coming week in order to send out a happy birthday message.
+
 2. Explain the difference between a callback and a higher order function.
+
+    A callback function is one that is passed as an argument to another function. The function that makes use of the callback function is called a higher order function. Any function that outputs another function as its return value is also regarded as a higher order function. 
 
 3. Explain what a closure is.
 
+    A closure refers to the context that is encapsulated whenever a function is called. This context can be preserved by assigning a specific instance of the function call to a variable. As long as the variable remains in memory, the context provided at its creation can be recalled. This allows for functionality in javaScript similar to that afforded by 'private variables' in other programming languages. 
+
 4. Describe the four principles of the 'this' keyword.
 
+    1. Window scope - Absent any other contextual information, the 'this' keyword will refer to the widest scope available, in web browsers this is the 'window', in node.js it is called 'Global' scope. Window-scoped 'this' references are to be avoided generally because there is almost never a reason to manipulate the window in this way. 
+    2. Implicit binding - When a method of an object is called, 'this' refers to whatever the next highest level of scope would be. This can be determined in dot syntax by looking one spot to the left of the dot in the call. For example, when calling arr.map(), 'this' would refer to the array, 'arr', from which .map is being called. 
+    3. Objects created with 'new' - When an object is created by a constructor function using the 'new' keyword, 'this' references inside the constructor refer to the instance of the object that is being created.  
+    4. Explicit binding  - Using the functions .call(), .apply(), and .bind() it is possible to explicitly assign the 'this' value for the function being called. 
+
 5. Why do we need super() in an extended class?
+
+    super() allows the child class access to the full set of properties and methods provided in the parent class. It is analagous to the .call(this, attributes) function in pseudoclassical inheritance. 
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade. 
 
