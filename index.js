@@ -45,7 +45,7 @@ function summation(topValue) {
 
   }
 
-  console.log(summation(4));
+  // console.log(summation(4));
  
 
 // 🦁🦁🦁 Topic 2: ADVANCED Array Methods 🦁🦁🦁
@@ -80,7 +80,7 @@ const zooAnimals = [
     return displayNames;
   }
   
-  console.log(animalNames(zooAnimals));
+  //console.log(animalNames(zooAnimals));
 
   /* 🦁🦁🦁 Request 2: .map() 🦁🦁🦁
   The zoo needs a list of all their animal's names converted to lower case. 
@@ -96,7 +96,7 @@ const zooAnimals = [
     return animalData.map(element => element.animal_name.toLowerCase());
   }
 
-  console.log(lowerCaseNames(zooAnimals));
+  //console.log(lowerCaseNames(zooAnimals));
   
   
   /* 🦁🦁🦁 Request 3: .filter() 🦁🦁🦁
@@ -107,10 +107,11 @@ const zooAnimals = [
   3. Return this new array
   */
 
-  function lowPopulationAnimals(/*Your Code Here*/){
-    /*Your Code Here*/
+  function lowPopulationAnimals(animalData){
+    return animalData.filter(animal => animal.population < 5 );
   }
-  
+  // console.log(lowPopulationAnimals(zooAnimals));
+
 
   /* 🦁🦁🦁 Request 4: .reduce() 🦁🦁🦁
   The zoo needs to know their total animal population across the United States. 
@@ -121,10 +122,13 @@ const zooAnimals = [
   💡 NOTE: Remember the reduce method takes two arguments: a callback (which itself takes two args - the accumulator and the item), and an initial value for the count. Check MDN/W3Schools for syntax!
   */
 
-  function USApop(/*Your Code Here*/){
-    /*Your Code Here*/
+  function USApop(animalData){
+    return animalData.reduce(
+      (total, current) => total + current.population,
+      0)
   }
   
+  console.log(USApop(zooAnimals));
   
   // 🦁🦁🦁 Callbacks 🦁🦁🦁  
   /* 🦁🦁🦁 Step 1: Create a higher-order function 🦁🦁🦁
